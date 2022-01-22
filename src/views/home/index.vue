@@ -2,7 +2,7 @@
   <div>
     <!-- search -->
     <a-card>
-      <a-input-search size="large" class="search" @search="onSearch" placeholder="搜索一个小树苗~">
+      <a-input-search size="large" class="search" placeholder="搜索一个小树苗~" @search="onSearch">
         <template #enterButton>
           <a-button style="width: 100px; height: 48px" class="search_btn" type="primary">
             <img :src="IconSerach" alt="" />
@@ -25,7 +25,7 @@
       </a-col>
     </a-row>
     <a-divider class="line" />
-    <Table :url="fetchApi.list" :columns="columns" :hiddenFilter="true" :scroll="{ x: 1200 }" />
+    <Table :url="fetchApi.list" :columns="columns" :hidden-filter="true" :scroll="{ x: 1200 }" />
   </div>
 </template>
 <script setup lang="ts">
@@ -49,7 +49,9 @@ onUnmounted(() => {
   store.resetState()
 })
 
-const onSearch = () => {}
+const onSearch = () => {
+  console.log('search')
+}
 </script>
 <style lang="less" scoped>
 .search {

@@ -7,7 +7,7 @@
         <a-avatar :size="100" :src="avatar" />
       </div>
       <div class="content_right">
-        <a-row class="row" v-for="item in columns" :key="item.label">
+        <a-row v-for="item in columns" :key="item.label" class="row">
           <a-col :span="12">
             <a-space>
               <div class="label-w">{{ item.label }}</div>

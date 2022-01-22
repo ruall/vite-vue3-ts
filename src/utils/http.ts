@@ -66,7 +66,9 @@ instance.interceptors.response.use(
   (error) => {
     console.log('err' + error) // for debug
     // 没权限时，不再重复提示
-    if (error === '没有操作权限') return
+    if (error === '没有操作权限') {
+      return
+    }
     createMessage.error('网络超时，稍后再试吧')
   }
 )

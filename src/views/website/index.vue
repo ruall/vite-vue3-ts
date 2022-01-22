@@ -1,7 +1,7 @@
 <template>
   <div class="node-conatiner">
     <h2 class="nc_title font18">网站管理</h2>
-    <Table :url="fetchApi.page_one_list" :columns="columns" :hiddenFilter="true" />
+    <Table :url="fetchApi.page_one_list" :columns="columns" :hidden-filter="true" />
   </div>
 </template>
 <script setup lang="ts">

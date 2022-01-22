@@ -4,8 +4,8 @@
       <p class="text">请输入手机号登录</p>
       <a-form-item name="username">
         <a-input
-          class="reset-input"
           v-model:value="formModel.username"
+          class="reset-input"
           placeholder="管理员：admin，普通：test"
         >
           <template #prefix>
@@ -17,8 +17,8 @@
       <p class="text">请输入密码</p>
       <a-form-item name="password">
         <a-input
-          class="reset-input"
           v-model:value="formModel.password"
+          class="reset-input"
           type="password"
           placeholder="密码为 123456"
         >
@@ -31,7 +31,7 @@
       <a-form-item>
         <a-row>
           <a-col :span="12">
-            <a-checkbox class="reset_checkbox" v-model:checked="checked">自动登录</a-checkbox>
+            <a-checkbox v-model:checked="checked" class="reset_checkbox">自动登录</a-checkbox>
           </a-col>
           <a-col :span="12" class="text-right">
             <!-- <span class="gray_text">忘记密码?</span> -->
@@ -42,7 +42,6 @@
         <a-button html-type="submit" class="btn" :loading="loading">立即登录</a-button>
       </a-form-item>
     </a-form>
-    <p class="copyright">@copyright JS-banana</p>
   </div>
 </template>
 <script setup lang="ts">
@@ -53,14 +52,14 @@ const router = useRouter()
 
 const loading = ref(false)
 
-let state: any = reactive({
+const state: any = reactive({
   otherQuery: {},
   redirect: undefined,
 })
 
 /* listen router change  */
 const route = useRoute()
-let getOtherQuery = (query: any) => {
+const getOtherQuery = (query: any) => {
   return Object.keys(query).reduce((acc: any, cur) => {
     if (cur !== 'redirect') {
       acc[cur] = query[cur]

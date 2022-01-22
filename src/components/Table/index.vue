@@ -5,21 +5,21 @@
       :button="tableFilterButton"
       :items="tableFilterItems"
       :model="tableFilterModel"
-      :hiddenFilter="hiddenFilter"
+      :hidden-filter="hiddenFilter"
       :pagination="null"
       @onSearch="onSearch"
     />
     <!-- table -->
     <a-table
       :class="['ant-table-striped', { border: hasBordered }]"
-      :rowClassName="(_, index) => (index % 2 === 1 ? 'table-striped' : null)"
-      :dataSource="dataSource"
+      :row-class-name="(_, index) => (index % 2 === 1 ? 'table-striped' : null)"
+      :data-source="dataSource"
       :columns="columns"
-      :rowKey="(record) => record.id"
+      :row-key="(record) => record.id"
       :pagination="pagination"
       :loading="loading"
-      @change="handleTableChange"
       :scroll="scroll"
+      @change="handleTableChange"
     >
       <!-- slot 写法自定义 操作列 -->
       <!-- <template #[item]="data" v-for="item in Object.keys($slots)" :key="item">
@@ -41,12 +41,12 @@
             @confirm="action?.onConfirm(record)"
             @cancel="action?.onCancel(record)"
           >
-            <a @click.prevent="() => {}" :type="action.type">{{ action.label }}</a>
+            <a :type="action.type" @click.prevent="() => {}">{{ action.label }}</a>
           </a-popconfirm>
           <!-- 按钮 -->
-          <a v-else @click="action?.onClick(record)" :type="action.type">{{ action.label }}</a>
+          <a v-else :type="action.type" @click="action?.onClick(record)">{{ action.label }}</a>
           <!-- 分割线 -->
-          <a-divider type="vertical" v-if="index < getActions.length - 1" />
+          <a-divider v-if="index < getActions.length - 1" type="vertical" />
         </template>
       </template>
     </a-table>
