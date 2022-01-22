@@ -1,4 +1,4 @@
-import { getThemeVariables } from 'ant-design-vue/dist/theme';
+import { getThemeVariables } from 'ant-design-vue/dist/theme'
 
 // @primary-color: #1890ff; // 全局主色
 // @link-color: #1890ff; // 链接色
@@ -18,7 +18,7 @@ import { getThemeVariables } from 'ant-design-vue/dist/theme';
  * less global variable
  */
 export function generateModifyVars(dark = false) {
-  const modifyVars = getThemeVariables({ dark });
+  const modifyVars = getThemeVariables({ dark })
   return {
     ...modifyVars,
     // Used for global import to avoid the need to import each style file separately
@@ -26,5 +26,5 @@ export function generateModifyVars(dark = false) {
     // hack: `${modifyVars.hack} @import (reference) "${resolve('src/design/config.less')}";`,
     'primary-color': '#3860F4',
     'link-color': '#3860F4',
-  };
+  }
 }

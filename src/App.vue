@@ -5,12 +5,12 @@
 </template>
 
 <script lang="ts" setup>
-import zhCN from 'ant-design-vue/es/locale/en_US'
+import zhCN from 'ant-design-vue/es/locale/zh_CN'
 import { useTitle } from '/@/hooks/useTitle'
 import dayjs from 'dayjs'
-import 'dayjs/locale/en'
+import 'dayjs/locale/zh-cn'
 
-dayjs.locale('en')
+dayjs.locale('zh-cn')
 
 useTitle()
 

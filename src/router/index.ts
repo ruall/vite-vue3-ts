@@ -1,5 +1,5 @@
-import { createRouter, createWebHashHistory } from 'vue-router';
-import routes from './router.config';
+import { createRouter, createWebHashHistory } from 'vue-router'
+import routes from './router.config'
 
 // app router
 export const router = createRouter({
@@ -7,4 +7,4 @@ export const router = createRouter({
   routes,
   strict: true,
   scrollBehavior: () => ({ left: 0, top: 0 }),
-});
+})

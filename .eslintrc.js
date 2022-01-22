@@ -92,7 +92,7 @@ module.exports = {
     // 强制在代码块中使用一致的大括号风格
     'brace-style': 'warn',
     // 强制使用骆驼拼写法命名约定
-    camelcase: 'warn',
+    // camelcase: 'warn',
     // 强制使用一致的缩进
     indent: 'off',
     // 强制在 JSX 属性中一致地使用双引号或单引号
@@ -114,7 +114,7 @@ module.exports = {
     // 要求方法链中每个调用都有一个换行符
     'newline-per-chained-call': ['warn', { ignoreChainWithDepth: 3 }],
     // 禁止 if 作为唯一的语句出现在 else 语句中
-    'no-lonely-if': 'warn',
+    // 'no-lonely-if': 'warn',
     // 禁止空格和 tab 的混合缩进
     'no-mixed-spaces-and-tabs': 'warn',
     // 禁止出现多行空行

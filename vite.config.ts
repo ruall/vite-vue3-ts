@@ -1,19 +1,19 @@
-import { UserConfig, ConfigEnv } from 'vite';
-import { resolve } from 'path';
-import { createVitePlugins } from './config/vite/plugin';
-import proxy from './config/vite/proxy';
-import { VITE_DROP_CONSOLE, VITE_PORT } from './config/constant';
-import { generateModifyVars } from './config/themeConfig';
-import { configManualChunk } from './config/vite/optimizer';
+import { UserConfig, ConfigEnv } from 'vite'
+import { resolve } from 'path'
+import { createVitePlugins } from './config/vite/plugin'
+import proxy from './config/vite/proxy'
+import { VITE_DROP_CONSOLE, VITE_PORT } from './config/constant'
+import { generateModifyVars } from './config/themeConfig'
+import { configManualChunk } from './config/vite/optimizer'
 
 function pathResolve(dir: string) {
-  return resolve(process.cwd(), '.', dir);
+  return resolve(process.cwd(), '.', dir)
 }
 
 // https://vitejs.dev/config/
 export default ({ command, mode }: ConfigEnv): UserConfig => {
-  const isBuild = command === 'build';
-  console.log(command, mode);
+  const isBuild = command === 'build'
+  console.log(command, mode)
 
   return {
     resolve: {
@@ -68,5 +68,5 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
       brotliSize: false,
       chunkSizeWarningLimit: 2000,
     },
-  };
-};
+  }
+}

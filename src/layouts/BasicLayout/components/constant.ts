@@ -26,4 +26,4 @@ export const navs = [
     icon: 'tuichudenglu_huaban1fuben17',
     name: '退出登录',
   },
-];
+]

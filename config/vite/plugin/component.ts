@@ -2,8 +2,8 @@
  * @name autoRegistryComponents
  * @description 按需加载，自动引入组件
  */
-import { AntDesignVueResolver } from 'unplugin-vue-components/resolvers';
-import Components from 'unplugin-vue-components/vite';
+import { AntDesignVueResolver } from 'unplugin-vue-components/resolvers'
+import Components from 'unplugin-vue-components/vite'
 
 export const autoRegistryComponents = () => {
   return Components({
@@ -37,5 +37,5 @@ export const autoRegistryComponents = () => {
     // filters for transforming targets
     include: [/\.vue$/, /\.vue\?vue/],
     exclude: [/[\\/]node_modules[\\/]/, /[\\/]\.git[\\/]/, /[\\/]\.nuxt[\\/]/],
-  });
-};
+  })
+}
