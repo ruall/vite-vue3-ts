@@ -7,10 +7,10 @@ import {
   API_TARGET_URL,
   MOCK_API_BASE_URL,
   MOCK_API_TARGET_URL,
-} from '../../config/constant';
-import { ProxyOptions } from 'vite';
+} from '../../config/constant'
+import { ProxyOptions } from 'vite'
 
-type ProxyTargetList = Record<string, ProxyOptions>;
+type ProxyTargetList = Record<string, ProxyOptions>
 
 const ret: ProxyTargetList = {
   // test
@@ -25,6 +25,6 @@ const ret: ProxyTargetList = {
     changeOrigin: true,
     rewrite: (path) => path.replace(new RegExp(`^${MOCK_API_BASE_URL}`), '/api'),
   },
-};
+}
 
-export default ret;
+export default ret

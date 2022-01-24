@@ -1,8 +1,8 @@
 /**
  * Package file volume analysis
  */
-import visualizer from 'rollup-plugin-visualizer';
-import { ANALYSIS } from '../../constant';
+import visualizer from 'rollup-plugin-visualizer'
+import { ANALYSIS } from '../../constant'
 
 export function configVisualizerConfig() {
   if (ANALYSIS) {
@@ -11,7 +11,7 @@ export function configVisualizerConfig() {
       open: true,
       gzipSize: true,
       brotliSize: true,
-    }) as Plugin;
+    }) as Plugin
   }
-  return [];
+  return []
 }

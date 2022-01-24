@@ -16,34 +16,34 @@
   </a-modal>
 </template>
 <script lang="ts">
-  export default defineComponent({
-    props: {
-      title: {
-        type: String,
-        default: '',
-      },
-      visible: {
-        type: Boolean,
-        default: false,
-      },
-      loading: {
-        type: Boolean,
-        default: false,
-      },
-      okText: {
-        type: String,
-        default: '创建',
-      },
+export default defineComponent({
+  props: {
+    title: {
+      type: String,
+      default: '',
     },
-    emits: ['cancel', 'ok'],
-    setup(_, { emit }) {
-      const handleCancel = () => emit('cancel');
-      const handleSubmit = () => emit('ok');
+    visible: {
+      type: Boolean,
+      default: false,
+    },
+    loading: {
+      type: Boolean,
+      default: false,
+    },
+    okText: {
+      type: String,
+      default: '创建',
+    },
+  },
+  emits: ['cancel', 'ok'],
+  setup(_, { emit }) {
+    const handleCancel = () => emit('cancel')
+    const handleSubmit = () => emit('ok')
 
-      return {
-        handleCancel,
-        handleSubmit,
-      };
-    },
-  });
+    return {
+      handleCancel,
+      handleSubmit,
+    }
+  },
+})
 </script>

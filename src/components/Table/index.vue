@@ -11,7 +11,8 @@
     />
     <!-- table -->
     <a-table
-      :class="['ant-table-striped', { border: hasBordered }]"
+      class="ant-table-striped"
+      :bordered="hasBordered"
       :row-class-name="(_, index) => (index % 2 === 1 ? 'table-striped' : null)"
       :data-source="dataSource"
       :columns="columns"
@@ -94,6 +95,8 @@ export default defineComponent({
     })
 
     const hasBordered = computed(() => props.bordered ?? true)
+
+    console.log(hasBordered.value)
 
     const listData = computed(
       () => (dataSource.value as unknown as Indexable)?.[props?.resKey?.list || 'list'] || []

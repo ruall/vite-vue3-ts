@@ -1,7 +1,7 @@
 <template>
   <div class="form_box">
     <a-form :model="formModel" :rules="rules" @finish="handleFinish">
-      <p class="text">请输入手机号登录</p>
+      <p class="text">账号</p>
       <a-form-item name="username">
         <a-input
           v-model:value="formModel.username"
@@ -14,7 +14,7 @@
           </template>
         </a-input>
       </a-form-item>
-      <p class="text">请输入密码</p>
+      <p class="text">密码</p>
       <a-form-item name="password">
         <a-input
           v-model:value="formModel.password"
@@ -27,16 +27,6 @@
             <Icon size="24px" type="shurumimadenglu" class="icon" />
           </template>
         </a-input>
-      </a-form-item>
-      <a-form-item>
-        <a-row>
-          <a-col :span="12">
-            <a-checkbox v-model:checked="checked" class="reset_checkbox">自动登录</a-checkbox>
-          </a-col>
-          <a-col :span="12" class="text-right">
-            <!-- <span class="gray_text">忘记密码?</span> -->
-          </a-col>
-        </a-row>
       </a-form-item>
       <a-form-item>
         <a-button html-type="submit" class="btn" :loading="loading">立即登录</a-button>
@@ -81,24 +71,21 @@ watch(
 )
 
 const rules = {
-  username: [{ required: true, trigger: 'blur', message: '请输入手机号' }],
+  username: [{ required: true, trigger: 'blur', message: '请输入账号' }],
   password: [{ required: true, trigger: 'blur', message: '请输入密码' }],
 }
 
-const checked = ref(true)
 const formModel = reactive({
   username: '',
   password: '',
 })
 
 const handleFinish = async (values) => {
-  // console.log(checked, values);
   loading.value = true
   const res = await userStore.login(values)
   loading.value = false
   if (res) {
-    // message.success('成功');
-    // router.replace({ path: state.redirect || '/', query: state.otherQuery });
+    // message.success('登录成功');
     router.replace('/')
   }
 }

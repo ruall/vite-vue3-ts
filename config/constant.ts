@@ -4,7 +4,7 @@
  */
 
 // 应用名
-export const APP_TITLE = 'Vite-Vue3-Admin'
+export const APP_TITLE = '管理后台'
 
 // 本地服务端口
 export const VITE_PORT = 3000

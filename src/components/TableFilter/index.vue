@@ -11,7 +11,7 @@
         <a-col flex="auto" class="rowE">
           <a-space>
             <template v-for="item in getItems" :key="item.name">
-              <a-form-item :name="item.name">
+              <a-form-item :label="item.name">
                 <a-select
                   v-if="item.type === 'select'"
                   :key="`select-${item.name}`"
@@ -47,68 +47,68 @@
   </a-card>
 </template>
 <script lang="ts">
-  export default defineComponent({
-    props: ['hiddenFilter', 'button', 'items', 'model'],
-    emits: ['onSearch'],
+export default defineComponent({
+  props: ['hiddenFilter', 'button', 'items', 'model'],
+  emits: ['onSearch'],
 
-    setup(props, { emit }) {
-      const formModel = reactive(props.model || {});
+  setup(props, { emit }) {
+    const formModel = reactive(props.model || {})
 
-      const getItems = computed(() => {
-        return (props.items || []).map((item) => {
-          return {
-            type: 'input',
-            ...item,
-          };
-        });
-      });
-
-      const handleSubmit = () => {
-        emit('onSearch');
-      };
-
-      // onMounted(() => console.log(`hiddenFilter`, props.hiddenFilter));
-
-      const hasHidden = ref(props.hiddenFilter);
-
-      watchEffect(() => {
-        // 如果都不存在
-        if (!props.button && !props.items) {
-          hasHidden.value = true;
+    const getItems = computed(() => {
+      return (props.items || []).map((item) => {
+        return {
+          type: 'input',
+          ...item,
         }
-      });
+      })
+    })
 
-      return {
-        formModel,
-        getItems,
-        hasHidden,
-        handleSubmit,
-      };
-    },
-  });
+    const handleSubmit = () => {
+      emit('onSearch')
+    }
+
+    // onMounted(() => console.log(`hiddenFilter`, props.hiddenFilter));
+
+    const hasHidden = ref(props.hiddenFilter)
+
+    watchEffect(() => {
+      // 如果都不存在
+      if (!props.button && !props.items) {
+        hasHidden.value = true
+      }
+    })
+
+    return {
+      formModel,
+      getItems,
+      hasHidden,
+      handleSubmit,
+    }
+  },
+})
 </script>
 <style lang="less" scoped>
-  .form-container {
-    .default-select-w {
-      width: 120px;
-    }
-    .default-search-w {
-      width: 290px;
-    }
-    // & :deep(.ant-input) {
-    //   height: 36px;
-    // }
-    // & :deep(.ant-select) {
-    //   height: 36px;
-    // }
-    // & :deep(.ant-btn) {
-    //   height: 36px;
-    // }
+.form-container {
+  .default-select-w {
+    width: 120px;
   }
-  .text {
-    font-size: 16px;
-    font-weight: 600;
-    line-height: 22px;
-    color: rgba(0, 0, 0, 0.85);
+  .default-search-w {
+    width: 290px;
   }
+  // & :deep(.ant-input) {
+  //   height: 36px;
+  // }
+  // & :deep(.ant-select) {
+  //   height: 36px;
+  // }
+  // & :deep(.ant-btn) {
+  //   height: 36px;
+  // }
+}
+.text {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 22px;
+  color: rgba(0, 0, 0, 0.85);
+}
 </style>

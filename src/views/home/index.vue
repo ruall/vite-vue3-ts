@@ -25,19 +25,30 @@
       </a-col>
     </a-row>
     <a-divider class="line" />
-    <Table :url="fetchApi.list" :columns="columns" :hidden-filter="true" :scroll="{ x: 1200 }" />
+    <Table
+      :bordered="bordered"
+      :url="fetchApi.list"
+      :columns="columns"
+      :button="button"
+      :items="items"
+      :model="model"
+      :actions="actions"
+      :hidden-filter="false"
+      :scroll="{ x: 1200 }"
+    />
   </div>
 </template>
 <script setup lang="ts">
 import IconSerach from '/@/assets/images/Icon _Search.png'
 import DataOverview from './components/DataOverview.vue'
 import TradingHistory from './components/TradingHistory.vue'
-import { columns } from './constant'
+import { columns, actions, button, items, model } from './constant'
 import fetchApi from '/@/api/home'
 import { useHomeStore } from '/@/store/modules/home'
 
 const store = useHomeStore()
 const loading = ref(false)
+const bordered = ref(true)
 
 onMounted(async () => {
   loading.value = true

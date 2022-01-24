@@ -48,3 +48,45 @@ export const columns: ColumnProps[] = [
     fixed: 'right',
   },
 ]
+
+export const button = {
+  type: 'button',
+  label: '新增',
+}
+
+export const items = [
+  {
+    label: '选择框：',
+    placeholder: '请选择',
+    name: 'btn1',
+    type: 'select',
+    options: [...Array(25)].map((_, i) => ({ value: (i + 10).toString(36) + (i + 1) })),
+  },
+  {
+    label: '选择框：',
+    placeholder: '请选择',
+    name: 'btn1',
+    type: 'search',
+    options: [...Array(25)].map((_, i) => ({ value: (i + 10).toString(36) + (i + 1) })),
+  },
+]
+
+export const model = [
+  {
+    btn1: 'a1',
+  },
+]
+
+export const actions = [
+  {
+    title: '按钮1',
+    width: 100,
+    key: 'action1',
+    label: 'button1',
+    popConfirm: true,
+    onConfirm: () => {},
+    onCancel: () => {},
+    fixed: 'right',
+    type: 'primary',
+  },
+]
